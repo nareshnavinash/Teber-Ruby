@@ -50,7 +50,7 @@ module Libraries
             driver.find_element(self).enabled?
         end
 
-        def is_enabled_with_wait?(timeout = 30, driver = $focus_driver)
+        def is_enabled_with_wait?(timeout = $conf["implicit_wait"], driver = $focus_driver)
             index = 0
             while driver.find_element(self).enabled? == false
                 sleep 1
@@ -68,10 +68,10 @@ module Libraries
         begin
             return driver.driver.find_element(self.how, self.what).displayed?
             rescue Exception => e
-                driver.driver.manage.timeouts.implicit_wait = 30
+                driver.driver.manage.timeouts.implicit_wait = $conf["implicit_wait"]
                 return false
             ensure
-                driver.driver.manage.timeouts.implicit_wait = 30
+                driver.driver.manage.timeouts.implicit_wait = $conf["implicit_wait"]
             end
         end
 
@@ -79,12 +79,12 @@ module Libraries
             return !is_present?(driver)
         end
 
-        def is_present_with_wait?(timeout = 30, driver = $focus_driver)
+        def is_present_with_wait?(timeout = $conf["implicit_wait"], driver = $focus_driver)
             Wait.wait_for_element(self, timeout, driver)
             is_present?(driver)
         end
 
-        def is_not_present_with_wait?(timeout = 30, driver = $focus_driver)
+        def is_not_present_with_wait?(timeout = $conf["implicit_wait"], driver = $focus_driver)
             Wait.wait_for_element_hide(self, timeout, driver)
             return !is_present?(driver)
         end
@@ -93,7 +93,7 @@ module Libraries
             click(driver) if is_present?(driver)
         end
 
-        def click_if_present_with_wait(timeout = 30, driver = $focus_driver)
+        def click_if_present_with_wait(timeout = $conf["implicit_wait"], driver = $focus_driver)
             click(driver) if is_present_with_wait?(timeout, driver)
         end
 

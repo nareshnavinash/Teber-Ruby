@@ -9,7 +9,7 @@ module Libraries
       @@drivers = []
       @@drivers_with_names = {}
   
-      def initialize(driver_name = "Driver", browser = "chrome")
+      def initialize(driver_name = "Driver", browser = $conf["browser"])
         begin
           start(driver_name,browser)
           puts "#{driver_name} is initialized"
@@ -33,7 +33,7 @@ module Libraries
           switches = ["disable-infobars", "disable-gpu", "disable-dev-shm-usage", "no-sandbox"] # "headless"
           switches.map { |k| options.add_argument(k) }
           @driver = Selenium::WebDriver.for(:chrome, options: options)
-          @driver.manage.timeouts.implicit_wait = 30
+          @driver.manage.timeouts.implicit_wait = $conf["implicit_wait"]
   
         when 'firefox', 'ff'
             # to be added

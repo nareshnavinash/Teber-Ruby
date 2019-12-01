@@ -35,4 +35,3 @@ Cucumber::Core::Test::Step.module_eval do
         "#{source.last.keyword}#{text}"
     end
 end
-
