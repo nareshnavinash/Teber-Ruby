@@ -1,4 +1,4 @@
-module TestBdd
+module Libraries
     module Wait
 
         # avoid defining self in def self.some_method -> def some_method

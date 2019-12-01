@@ -98,8 +98,12 @@ module Libraries
         end
 
         def move_and_click(driver = $focus_driver)
-        element = driver.find_element(self)
-        driver.action.move_to(element).click.perform
+            element = driver.find_element(self)
+            driver.action.move_to(element).click.perform
+        end
+
+        def scroll_to_locator(driver = $focus_driver)
+            $focus_driver.scroll_to_locator(self)
         end
 
         ################################

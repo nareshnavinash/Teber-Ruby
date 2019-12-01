@@ -21,7 +21,7 @@ module Libraries
       end
   
       ##############################
-      # Custom methods of testbdd #
+      # Custom methods of driver #
       ##############################
   
       def start(driver_name, browser)
@@ -64,7 +64,6 @@ module Libraries
       def get(url)
         $focus_driver = self
         @driver.get(url)
-        add_to_allure_env("URL = #{url}")
         puts "#{$focus_driver} loaded with - #{url}"
       end
   
@@ -76,7 +75,7 @@ module Libraries
   
       def find_element(locator)
         $focus_driver = self
-        TestBdd::Wait.wait_for_element(locator)
+        Libraries::Wait.wait_for_element(locator)
         return @driver.find_element(locator.how,locator.what)
       end
   
@@ -90,6 +89,16 @@ module Libraries
         element=find_elements(locator)[index-1]
         @driver.action.move_to(element).perform
         puts "mouse over for the element - #{locator.how} => #{locator.what} is done"
+      end
+      
+      def mouse
+        $focus_driver = self
+        return @driver.mouse
+      end
+  
+      def action
+        $focus_driver = self
+        return @driver.action
       end
   
       def move_and_click(locator)

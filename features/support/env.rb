@@ -16,6 +16,7 @@ require 'rest-client'
 require 'json'
 
 include AllureCucumber::DSL
+include Libraries
 
 if File.exist?('features/global-data/global.yml')
     $conf =  YAML.load_file('features/global-data/global.yml')

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<ns2:test-suite xmlns="" xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1575184438577" stop="1575184470291">
+  <name>Search for a term in google search</name>
+  <title>Search for a term in google search</title>
+  <test-cases>
+    <test-case start="1575184440073" stop="1575184448019" status="passed">
+      <name>Single term serach</name>
+      <title>Single term serach</title>
+      <steps>
+        <step start="1575184442604" stop="1575184442604" status="passed">
+          <name>Given I navigate to google search page</name>
+          <title>Given I navigate to google search page</title>
+          <attachments/>
+        </step>
+        <step start="1575184442606" stop="1575184447976" status="passed">
+          <name>When I type the term in google search bar and click on serach results</name>
+          <title>When I type the term in google search bar and click on serach results</title>
+          <attachments/>
+        </step>
+        <step start="1575184447976" stop="1575184448019" status="passed">
+          <name>Then I should get the results page</name>
+          <title>Then I should get the results page</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="70340554485280"/>
+        <label name="host" value="Naresh-Sekar"/>
+        <label name="feature" value="Search for a term in google search"/>
+        <label name="story" value="Single term serach"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1575184466071" stop="1575184470290" status="passed">
+      <name>Multiple search items in google using scenario outline: Hello</name>
+      <title>Multiple search items in google using scenario outline: Hello</title>
+      <steps>
+        <step start="1575184466728" stop="1575184466728" status="passed">
+          <name>Given I navigate to google search page</name>
+          <title>Given I navigate to google search page</title>
+          <attachments/>
+        </step>
+        <step start="1575184466730" stop="1575184470246" status="passed">
+          <name>When I type the "Hello" in google search bar and click on serach results</name>
+          <title>When I type the "Hello" in google search bar and click on serach results</title>
+          <attachments/>
+        </step>
+        <step start="1575184470246" stop="1575184470290" status="passed">
+          <name>Then I should get the results page</name>
+          <title>Then I should get the results page</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="70340554485280"/>
+        <label name="host" value="Naresh-Sekar"/>
+        <label name="feature" value="Search for a term in google search"/>
+        <label name="story" value="Multiple search items in google using scenario outline: Hello"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1575184453092" stop="1575184459997" status="passed">
+      <name>Multiple search items in google using scenario outline: Hi</name>
+      <title>Multiple search items in google using scenario outline: Hi</title>
+      <steps>
+        <step start="1575184453406" stop="1575184453406" status="passed">
+          <name>Given I navigate to google search page</name>
+          <title>Given I navigate to google search page</title>
+          <attachments/>
+        </step>
+        <step start="1575184453407" stop="1575184459954" status="passed">
+          <name>When I type the "Hi" in google search bar and click on serach results</name>
+          <title>When I type the "Hi" in google search bar and click on serach results</title>
+          <attachments/>
+        </step>
+        <step start="1575184459955" stop="1575184459996" status="passed">
+          <name>Then I should get the results page</name>
+          <title>Then I should get the results page</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="70340554485280"/>
+        <label name="host" value="Naresh-Sekar"/>
+        <label name="feature" value="Search for a term in google search"/>
+        <label name="story" value="Multiple search items in google using scenario outline: Hi"/>
+      </labels>
+      <parameters/>
+    </test-case>
+    <test-case start="1575184460002" stop="1575184466068" status="passed">
+      <name>Multiple search items in google using scenario outline: Where</name>
+      <title>Multiple search items in google using scenario outline: Where</title>
+      <steps>
+        <step start="1575184460589" stop="1575184460589" status="passed">
+          <name>Given I navigate to google search page</name>
+          <title>Given I navigate to google search page</title>
+          <attachments/>
+        </step>
+        <step start="1575184460590" stop="1575184466028" status="passed">
+          <name>When I type the "Where" in google search bar and click on serach results</name>
+          <title>When I type the "Where" in google search bar and click on serach results</title>
+          <attachments/>
+        </step>
+        <step start="1575184466029" stop="1575184466067" status="passed">
+          <name>Then I should get the results page</name>
+          <title>Then I should get the results page</title>
+          <attachments/>
+        </step>
+      </steps>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="70340554485280"/>
+        <label name="host" value="Naresh-Sekar"/>
+        <label name="feature" value="Search for a term in google search"/>
+        <label name="story" value="Multiple search items in google using scenario outline: Where"/>
+      </labels>
+      <parameters/>
+    </test-case>
+  </test-cases>
+  <labels>
+    <label name="severity" value="normal"/>
+    <label name="thread" value="70340554485280"/>
+    <label name="host" value="Naresh-Sekar"/>
+  </labels>
+</ns2:test-suite>
