@@ -14,6 +14,7 @@ require 'faker'
 require 'git'
 require 'rest-client'
 require 'json'
+require 'parallel_tests'
 
 include AllureCucumber::DSL
 include Libraries
@@ -27,7 +28,7 @@ end
 
 AllureCucumber::configure do |c|
     c.output_dir = "reports/allure"
-    c.clean_dir  = false
+    c.clean_dir  = true
 end
 
 Cucumber::Core::Test::Step.module_eval do
@@ -48,30 +49,33 @@ Before do |scenario|
     if File.exists?("#{test_variables_file_location}")
       $param = YAML.load_file(test_variables_file_location)
     end
-  end
+end
   
-  After do |scenario|
+After do |scenario|
     if scenario.failed?
-          begin
-              drivers = Driver.get_all_drivers
-              drivers.each do |l,m|
-                Driver.switch_to(l)
-                scenario.attach_file(m,l.save_screenshot)
-              end
-          rescue Exception => e
-              puts e.message
-              puts e.backtrace
-          end
-          # to quit the test run if any one of the scenario is failed
+        begin
+            drivers = Driver.get_all_drivers
+            drivers.each do |l,m|
+              Driver.switch_to(l)
+              scenario.attach_file(m,l.save_screenshot)
+            end
+        rescue Exception => e
+            puts e.message
+            puts e.backtrace
+        end
+        # to quit the test run if any one of the scenario is failed
     end
-  end
+end
   
   
-  at_exit do
+at_exit do
     # Moving the categories.json file from libraries to the allure folder
     # rerun results are not shown with the categories in allure report.
     # Raised an issue with allure-cucumber https://github.com/allure-framework/allure-cucumber/issues/83
+    if ParallelTests.first_process?
+        ParallelTests.wait_for_other_processes_to_finish
+    end
     source_directory      = Dir.pwd + "/features/libraries/categories.json"
     destination_directory = Dir.pwd + "/reports/allure/"
     `cp -a #{source_directory} #{destination_directory}`
-  end
+end
