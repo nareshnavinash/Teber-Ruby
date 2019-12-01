@@ -96,9 +96,9 @@ pipeline {
 ## Headless Run
 In `global-data/global.yml` file, if the mode is `headless`, the chrome will be initialized in headless mode which can be used to run in server. Screenshots will be added even if the browser runs in headless mode.
 
-### Break down into end to end tests
+## Break down into end to end tests
 
-**Adding Locators to the project**
+### Adding Locators to the project
 
 1. Add Locators to the that are going to be used inside the project inside the `Locators` module
 ```
@@ -130,7 +130,7 @@ end
 3. Ideally each web page should have a new file inside locators folder (with the same name as the web page) and all the locators inside a web page has to be declared inside a page class(Class name also should be same as the web page name).
 * If the web page name is `home page` then the locator file name should be `home_page.rb` inside `locators` folder and the class name should be `HomePage` inside `Locators` module.
 
-**Adding page methods to the project**
+### Adding page methods to the project
 
 1. Add page specific methods inside the `Pages` module.
 ```
@@ -157,7 +157,7 @@ end
 3. Ideally each web page should have a new page file inside `pages` folder with the class name same as the web page name.
 * If the web page name is `home page` then the pages file name should be `home_page.rb` inside `pages` folder and the class name should be `HomePage` inside `Pages` module.
 
-**Creating a new feature file in the project**
+### Creating a new feature file in the project
 
 1. Define the tests in the feature file in gherkin language.
 ```
