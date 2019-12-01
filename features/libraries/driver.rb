@@ -30,7 +30,11 @@ module Libraries
   
         when 'chrome'
           options = Selenium::WebDriver::Chrome::Options.new
-          switches = ["disable-infobars", "disable-gpu", "disable-dev-shm-usage", "no-sandbox"] # "headless"
+          if ENV['MODE'] or $conf["mode"]
+            switches = ["disable-infobars", "disable-gpu", "disable-dev-shm-usage", "no-sandbox", "headless"]
+          else
+            switches = ["disable-infobars", "disable-gpu", "disable-dev-shm-usage", "no-sandbox"]
+          end
           switches.map { |k| options.add_argument(k) }
           @driver = Selenium::WebDriver.for(:chrome, options: options)
           @driver.manage.timeouts.implicit_wait = $conf["implicit_wait"]

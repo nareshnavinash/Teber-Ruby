@@ -14,3 +14,7 @@ Parallel mode with tags
 ```
 parallel_cucumber features/ -o "-t "@scenario_001""
 ```
+Headless run 
+```
+parallel_cucumber features/ -o "-t "@scenario_001" MODE=headless"
+```
