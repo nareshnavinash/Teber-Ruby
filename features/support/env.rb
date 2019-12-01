@@ -17,6 +17,7 @@ require 'json'
 
 include AllureCucumber::DSL
 include Libraries
+$VERBOSE = nil
 
 if File.exist?('features/global-data/global.yml')
     $conf =  YAML.load_file('features/global-data/global.yml')
