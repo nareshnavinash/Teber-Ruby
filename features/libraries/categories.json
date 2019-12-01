@@ -1,0 +1,31 @@
+[
+	{
+	"name": "Skipped tests",
+	"messageRegex": ".*",
+	"matchedStatuses": [ "skipped" ]
+	},
+	{
+	  "name": "Element not found",
+	  "traceRegex": ".*NoSuchElementError.*",
+	  "matchedStatuses": [ "failed" ]
+	},
+	{
+	  "name": "Broken tests",
+	  "traceRegex": "Error.*",
+	  "matchedStatuses": [ "failed"]
+	},
+	{
+	  "name": "Test Script defect",
+	  "messageRegex": ".*Expected is not a String or a RegExp.*",
+	  "matchedStatuses": ["failed"]
+	},
+	{
+	  "name": "Element not found Defect",
+	  "messageRegex": ".*no such element.*",
+	  "matchedStatuses": ["failed"]
+	},
+	{
+	  "name": "Passed tests",
+	  "matchedStatuses": ["passed"]
+	}
+]
