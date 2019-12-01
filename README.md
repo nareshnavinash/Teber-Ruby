@@ -9,7 +9,7 @@ Teber-Ruby is a Page Object Model (POM) framework for selenium automation with r
 [![email me](https://img.shields.io/badge/Contact-Email-green.svg)](nareshnavinash@gmail.com)
 
 
-![alt text](libraries/Teber_Ruby_Black.png)
+![alt text](features/libraries/Teber_Ruby_Black.png)
 
 
 ## Supports
