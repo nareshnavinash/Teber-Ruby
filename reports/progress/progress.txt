@@ -1,6 +1,0 @@
-Using the default profile...
-[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
-
-5 scenarios ([32m5 passed[0m)
-15 steps ([32m15 passed[0m)
-0m31.709s
