@@ -1,4 +1,4 @@
 browser: chrome
 implicit_wait: 10
 screenshot_location: reports/screenshots
-mode: headless
+mode: UI
