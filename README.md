@@ -142,7 +142,7 @@ module Pages
 end
 ```
 
-2. For each page add a new class inside `Pages` module and each page class should inherit the locators class of the same page..
+2. For each page add a new class inside `Pages` module and each page class should inherit the locators class of the same page
 
 ```
 module Pages
