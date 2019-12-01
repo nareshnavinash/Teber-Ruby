@@ -107,6 +107,7 @@ module Locators
 end
 ```
 2. For each page add a new class inside the `Locators` module.
+
 ```
 module Locators
   class TestPage
@@ -127,18 +128,22 @@ module Locators
   end
 end
 ```
+
 3. Ideally each web page should have a new file inside locators folder (with the same name as the web page) and all the locators inside a web page has to be declared inside a page class(Class name also should be same as the web page name).
 * If the web page name is `home page` then the locator file name should be `home_page.rb` inside `locators` folder and the class name should be `HomePage` inside `Locators` module.
 
 ### Adding page methods to the project
 
 1. Add page specific methods inside the `Pages` module.
+
 ```
 module Pages
   # add the page class here
 end
 ```
+
 2. For each page add a new class inside `Pages` module and each page class should inherit the locators class of the same page..
+
 ```
 module Pages
   class TestPage < Locators::TestPage
@@ -154,12 +159,14 @@ module Pages
   end
 end
 ```
+
 3. Ideally each web page should have a new page file inside `pages` folder with the class name same as the web page name.
 * If the web page name is `home page` then the pages file name should be `home_page.rb` inside `pages` folder and the class name should be `HomePage` inside `Pages` module.
 
 ### Creating a new feature file in the project
 
 1. Define the tests in the feature file in gherkin language.
+
 ```
 Feature: Sample project setup
   To get to know the sample cucumber project
@@ -169,7 +176,9 @@ Feature: Sample project setup
     When false eql false
     Then string eql string
 ```
+
 2. Ideally tags has to be used for each feature and each scenario to identify the test cases in the unique way.
+
 ```
 @before_feature @test_feature
 Feature: Sample project setup
@@ -181,9 +190,11 @@ Feature: Sample project setup
     When false eql false
     Then string eql string
 ```
+
 3. Now declare the feature steps inside the step definitions file, the name of the step definition file should be same as the feature file.
 
 4. In the step definitions file, initially declare the before and after action block.
+
 ```
 Before do
   puts "before each "
@@ -193,7 +204,9 @@ After do |s|
    puts "after each "
 end
 ```
+
 5. Cucumber allows us to use in an extensive way. So we can define `Before` and `After` for each specific tags that we defined in the feature file.
+
 ```
 Before('@test_tag') do
   puts "before each "
@@ -203,7 +216,9 @@ After('@test_tag') do |s|
    puts "after each "
 end
 ```
+
 6. Define the steps after the before/after block.
+
 ```
 Given("true eql true") do
   expect(true).to eql true
