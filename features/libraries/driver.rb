@@ -30,7 +30,7 @@ module Libraries
   
         when 'chrome'
           options = Selenium::WebDriver::Chrome::Options.new
-          if ENV['MODE'] or $conf["mode"]
+          if ENV['MODE'] == "headless" or $conf["mode"] == "headless"
             switches = ["disable-infobars", "disable-gpu", "disable-dev-shm-usage", "no-sandbox", "headless"]
           else
             switches = ["disable-infobars", "disable-gpu", "disable-dev-shm-usage", "no-sandbox"]
