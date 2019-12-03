@@ -15,9 +15,10 @@ require 'git'
 require 'rest-client'
 require 'json'
 require 'parallel_tests'
+require 'teber'
 
 include AllureCucumber::DSL
-include Libraries
+include Teber
 $VERBOSE = nil
 
 if File.exist?('features/global-data/global.yml')
