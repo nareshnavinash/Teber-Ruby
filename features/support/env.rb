@@ -18,7 +18,8 @@ require 'parallel_tests'
 require 'teber'
 
 include AllureCucumber::DSL
-include Teber
+# include Teber
+include Libraries
 $VERBOSE = nil
 
 if File.exist?('features/global-data/global.yml')
