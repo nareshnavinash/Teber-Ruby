@@ -18,3 +18,4 @@ source 'https://rubygems.org'
   # gem 'byebug', platform: [:mri, :mingw, :x64_mingw]
   gem 'webdriver_manager'
   gem 'teber-library'
+  gem 'httparty'

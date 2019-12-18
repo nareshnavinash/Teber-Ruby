@@ -15,6 +15,7 @@ After('@TC_Google_Search') do
 end
 
 Given("I navigate to google search page") do
+  binding.pry
     @@driver.get($param["googleURL"])
 end
 

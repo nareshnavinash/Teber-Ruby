@@ -16,6 +16,7 @@ require 'rest-client'
 require 'json'
 require 'parallel_tests'
 require 'teber'
+require 'httparty'
 
 include AllureCucumber::DSL
 # include Teber
